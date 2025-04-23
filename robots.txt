@@ -397,12 +397,12 @@ Allow: /wp-includes/
 Crawl-Delay: 1
 Disallow: /wp-admin/
 Disallow: /wp-login.php
-Sitemap: https://undefinedname-rr.netlify.app/sitemap.xml
+Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Bingbot
 Allow: /
 Crawl-Delay: 1
-Sitemap: https://undefinedname-rr.netlify.app/sitemap.xml
+Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Slurp
 Allow: /
@@ -411,7 +411,7 @@ Allow: /wp-content/plugins/
 Crawl-Delay: 1
 Disallow: /wp-admin/
 Disallow: /wp-login.php
-Sitemap: https://undefinedname-rr.netlify.app/sitemap.xml
+Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Baiduspider
 Disallow: /
@@ -451,4 +451,4 @@ User-agent: Googlebot-Video
 Disallow: /videos/private/
 Allow: /videos/public/
 
-Sitemap: https://undefinedname-rr.netlify.app/sitemap.xml
+Sitemap: https://undfe.github.io/sitemap.xml
