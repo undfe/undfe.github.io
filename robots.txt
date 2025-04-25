@@ -397,12 +397,10 @@ Allow: /wp-includes/
 Crawl-Delay: 1
 Disallow: /wp-admin/
 Disallow: /wp-login.php
-Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Bingbot
 Allow: /
 Crawl-Delay: 1
-Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Slurp
 Allow: /
@@ -411,7 +409,6 @@ Allow: /wp-content/plugins/
 Crawl-Delay: 1
 Disallow: /wp-admin/
 Disallow: /wp-login.php
-Sitemap: https://undfe.github.io/sitemap.xml
 
 User-agent: Baiduspider
 Disallow: /
