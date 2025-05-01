@@ -387,5 +387,3 @@ status = 403
 [[edge_functions]]
   path = "/*"
   function = "rate-limit"
-
-Sitemap = "https://undefinedname-rr.netlify.app/sitemap.xml"
