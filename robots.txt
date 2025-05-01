@@ -447,5 +447,3 @@ Allow: /wp-content/uploads/images/
 User-agent: Googlebot-Video
 Disallow: /videos/private/
 Allow: /videos/public/
-
-Sitemap: https://undfe.github.io/sitemap.xml
