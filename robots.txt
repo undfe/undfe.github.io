@@ -390,60 +390,31 @@ Disallow: /offline/
 Crawl-Delay: 10
 
 User-agent: Googlebot
-Allow: /
-Allow: /wp-content/themes/
-Allow: /wp-content/plugins/
-Allow: /wp-includes/
-Crawl-Delay: 1
-Disallow: /wp-admin/
-Disallow: /wp-login.php
+Disallow: /
 
 User-agent: Bingbot
-Allow: /
-Crawl-Delay: 1
+Disallow: /
 
 User-agent: Slurp
-Allow: /
-Allow: /wp-content/themes/
-Allow: /wp-content/plugins/
-Crawl-Delay: 1
-Disallow: /wp-admin/
-Disallow: /wp-login.php
+Disallow: /
 
 User-agent: Baiduspider
 Disallow: /
-Crawl-Delay: 10
 
 User-agent: Twitterbot
-Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /user-data/
-Disallow: /confidential/
-Disallow: /api/
-Disallow: /backups/
-Disallow: /tmp/
-Disallow: /logs/
+Disallow: /
 
 User-agent: DuckDuckBot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
+Disallow: /
 
 User-agent: FacebookExternalHit
-Allow: /
-Disallow: /private/
-Disallow: /admin/
+Disallow: /
 
 User-agent: Pinterestbot
-Allow: /
-Disallow: /private/
-Disallow: /admin/
+Disallow: /
 
 User-agent: Googlebot-Image
-Disallow: /wp-content/uploads/private/
-Allow: /wp-content/uploads/images/
+Disallow: /
 
 User-agent: Googlebot-Video
-Disallow: /videos/private/
-Allow: /videos/public/
+Disallow: /
