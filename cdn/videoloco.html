@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LOCOS</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="LOCOS" />
+  <meta property="og:description" content="LOCOS GRITANDO" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:video" content="https://undefinedname-rr.netlify.app/cdn/loco_gritando.mp4" />
+  <meta property="og:video:type" content="video/mp4" />
+  <meta property="og:video:width" content="1280" />
+  <meta property="og:video:height" content="720" />
+  <meta property="og:image" content="https://undefinedname-rr.netlify.app/cdn/locos.jpg" />
+  <meta property="og:url" content="https://undefinedname-rr.netlify.app/index.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="LOCOS">
+  <meta name="twitter:description" content="LOCOS GRITANDO">
+  <meta name="twitter:image" content="https://undefinedname-rr.netlify.app/cdn/locos.jpg">
+  <meta name="twitter:player" content="https://undefinedname-rr.netlify.app/cdn/loco_gritando.mp4">
+  <meta name="twitter:player:width" content="1280">
+  <meta name="twitter:player:height" content="720">
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #111, #1c1c1c);
+      border: 2px solid #1e90ff;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(30, 144, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.05) inset;
+      max-width: 700px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.015);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    }
+
+    .title {
+      color: #00ffff;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #00f0ff;
+    }
+
+    .description {
+      color: #ff8800;
+      font-size: 18px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #ff8800;
+    }
+
+    .thumbnail {
+      position: relative;
+      cursor: pointer;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.02);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .play-icon::before {
+      content: '';
+      border-style: solid;
+      border-width: 18px 0 18px 28px;
+      border-color: transparent transparent transparent white;
+      display: inline-block;
+      margin-left: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="title">🎬 LOCOS</div>
+    <div class="description">🔥 LOCOS GRITANDO 🔥</div>
+
+    <div class="thumbnail" onclick="window.location.href='https://undefinedname-rr.netlify.app/cdn/loco_gritando.mp4'">
+      <img src="https://undefinedname-rr.netlify.app/cdn/locos.jpg" alt="Miniatura del video">
+      <div class="play-icon"></div>
+    </div>
+  </div>
+
+</body>
+</html>
