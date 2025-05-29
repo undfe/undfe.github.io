@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>.</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      display: inline-block;
+      padding: 8px;
+      border-radius: 16px;
+      margin: 20px;
+    }
+
+    .video-wrapper.led {
+      background: linear-gradient(
+        45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+      );
+      background-size: 400% 400%;
+      animation: ledGlow 5s linear infinite;
+    }
+
+    .video-wrapper video {
+      display: block;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    @keyframes ledGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Video con LED multicolor si tiene ?v1</h1>
+
+  <!-- Este sí tendrá LED porque tiene ?v1 -->
+  <div class="video-wrapper led">
+    <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4?v1"></video>
+  </div>
+
+  <!-- Este no tendrá LED porque no tiene ?v1 -->
+  <div class="video-wrapper">
+    <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4"></video>
+  </div>
+
+  <script>
+    // Script que detecta videos con ?v1 y aplica la clase .led automáticamente
+    document.querySelectorAll('video').forEach(video => {
+      if (video.src.includes('?v1')) {
+        video.parentElement.classList.add('led');
+      }
+    });
+  </script>
+</body>
+</html>
