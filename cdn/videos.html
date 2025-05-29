@@ -4,29 +4,20 @@
   <meta charset="UTF-8" />
   <title>.</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       background-color: #111;
       color: white;
       font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       padding: 40px;
+      text-align: center;
     }
 
-    .video-wrapper {
+    .led-wrapper {
       position: relative;
       display: inline-block;
       padding: 8px;
       border-radius: 16px;
       margin: 20px;
-    }
-
-    .video-wrapper.led {
       background: linear-gradient(
         45deg,
         red,
@@ -42,7 +33,7 @@
       animation: ledGlow 5s linear infinite;
     }
 
-    .video-wrapper video {
+    .led-wrapper video {
       display: block;
       border-radius: 12px;
       max-width: 600px;
@@ -60,23 +51,19 @@
   </style>
 </head>
 <body>
-  <h1>Video con LED multicolor si tiene ?v1</h1>
-
-  <!-- Este sí tendrá LED porque tiene ?v1 -->
-  <div class="video-wrapper led">
-    <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4?v1"></video>
-  </div>
-
-  <!-- Este no tendrá LED porque no tiene ?v1 -->
-  <div class="video-wrapper">
-    <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4"></video>
-  </div>
+  <h1>test</h1>
+  
+  <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4?v1"></video>
+  <video controls src="https://undfe.github.io/cdn/jajajaja/mariomeme.mp4"></video>
+  <video controls src="https://undfe.github.io/cdn/otrovideo.mp4?v1"></video>
 
   <script>
-    // Script que detecta videos con ?v1 y aplica la clase .led automáticamente
     document.querySelectorAll('video').forEach(video => {
       if (video.src.includes('?v1')) {
-        video.parentElement.classList.add('led');
+        const wrapper = document.createElement('div');
+        wrapper.className = 'led-wrapper';
+        video.parentNode.insertBefore(wrapper, video);
+        wrapper.appendChild(video);
       }
     });
   </script>
