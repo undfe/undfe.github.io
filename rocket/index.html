@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería de Videos – Heatseeker EU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+      position: relative;
+      min-height: 100vh;
+      background: url('https://spontaneous-truffle-91041f.netlify.app/fondo.jpg') no-repeat center center / cover;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .video-container {
+      width: 100%;
+      margin-bottom: 3rem;
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      background-color: #111111e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .led-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(270deg, #ff004c, #00ffd5, #ffe600, #6a00ff, #ff004c);
+      background-size: 1000% 1000%;
+      animation: rainbow 10s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .title {
+      font-size: 1.8rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 1rem 1rem 0.5rem;
+      color: #ffffff;
+      animation: fadeInTitle 1s ease-in-out;
+    }
+
+    @keyframes fadeInTitle {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: #ffd700;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+      animation: fadeInFooter 2s ease;
+    }
+
+    @keyframes fadeInFooter {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer img {
+      margin-top: 1rem;
+      max-width: 300px;
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .footer {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+
+    <div class="video-container">
+      <div class="led-strip"></div>
+      <h2 class="title">Ping Pong League</h2>
+      <video src="https://eh5hrty6tu6rtuy57rtuy57rtuy567tuy56rt.netlify.app/pingpong.mp4" controls></video>
+    </div>
+
+    <div class="video-container">
+      <div class="led-strip"></div>
+      <h2 class="title">Partida – 1X</h2>
+      <video src="https://eh5hrty6tu6rtuy57rtuy57rtuy567tuy56rt.netlify.app/match.-1x.mp4" controls></video>
+    </div>
+
+<div class="footer" style="font-size: 24px; text-align: center;">
+  <strong>Top EU Player – Heatseeker</strong>
+  <br>
+  <img src="tier.png" alt="Tier de jugador" style="width: 80%; max-width: 800px; margin-top: 10px;">
+</div>
+
+  </div>
+</body>
+</html>
