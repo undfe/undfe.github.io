@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="resources/satanic/pentagram.png" />
+  <title>CDN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .gallery img,
+    .gallery video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover,
+    .gallery video:hover {
+      transform: scale(1.03);
+    }
+  </style>
+
+<style>
+  body {
+      cursor: url('cursors/cursor-satanic/cursor.png') 16 16, auto !important;
+  }
+
+  a, button, input, select, textarea {
+      cursor: url('cursors/cursor-satanic/pointer.png') 16 16, pointer !important;
+  }
+</style>
+
+</head>
+<body>
+  <h1>Memes</h1>
+  <div class="gallery">
+    <img src="https://undfe.github.io/cdn/jajajaja/Captura de pantalla 2024-08-10 204145.png" alt="">
+
+    <video controls>
+      <source src="https://undfe.github.io/cdn/jajajaja/BULLIAN.mp4" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+
+  <script>
+    const titleText = "@CDN"; // Texto del título
+    let index = 0;
+    let isDeleting = false;
+
+    function animateTitle() {
+      if (!isDeleting && index < titleText.length) {
+        document.title = titleText.slice(0, index + 1); // Añadir letra por letra
+        index++;
+        setTimeout(animateTitle, 200); // Controla la velocidad de aparición
+      } else if (!isDeleting && index === titleText.length) {
+        setTimeout(() => {
+          isDeleting = true;
+          animateTitle();
+        }, 1000); // Espera 1 segundo antes de empezar a borrar
+      } else if (isDeleting && index > 1) { // Borrar todo excepto la "@"
+        document.title = titleText.slice(0, index); // Mantener solo la "@"
+        index--;
+        setTimeout(animateTitle, 200); // Controla la velocidad de borrado (0.2 segundos entre cada letra)
+      } else if (isDeleting && index === 1) { // Detener borrado cuando solo quede "@"
+        document.title = "@"; // Dejar solo la "@" visible
+        setTimeout(() => {
+          isDeleting = false; // Reinicia la animación de escribir después de 2 segundos
+          setTimeout(animateTitle, 200);
+        }, 2000); // Espera 2 segundos antes de reiniciar
+      }
+    }
+
+    animateTitle();
+  </script>
+
+</body>
+</html>
