@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>⛧ Templo Satánico ⛧</title>
+  <link rel="icon" type="image/x-icon" href="resources/satanic/pentagram.png" />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://thesatanictemple.com/cdn/shop/files/join-us-banner_1200x_070d9ec1-db32-4c1d-8171-4e5b00e86150_1200x553.jpg?v=1694104786') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0dede;
+      font-family: 'UnifrakturCook', cursive;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 5em;
+      color: crimson;
+      text-shadow: 0 0 15px black, 0 0 5px crimson;
+      margin-top: 80px;
+      animation: fuegoOscuro 2.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes fuegoOscuro {
+      0% {
+        text-shadow: 0 0 5px crimson, 0 0 10px black;
+        transform: scale(1) rotate(0deg);
+      }
+      50% {
+        text-shadow: 0 0 15px crimson, 0 0 30px black;
+        transform: scale(1.02) rotate(-1deg);
+      }
+      100% {
+        text-shadow: 0 0 10px crimson, 0 0 20px darkred;
+        transform: scale(1.03) rotate(1deg);
+      }
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 300px;
+      border: 3px solid crimson;
+      box-shadow: 0 0 15px black;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 1em;
+      color: #888;
+    }
+  </style>
+
+<style>
+  body {
+      cursor: url('cursors/cursor-satanic/cursor.png') 16 16, auto !important;
+  }
+
+  a, button, input, select, textarea {
+      cursor: url('cursors/cursor-satanic/pointer.png') 16 16, pointer !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <h1>Templo Satánico</h1>
+
+  <p>"Tenebrae. Lux Obscura. In Umbra Nos Renovamus."</p>
+
+  <div class="gallery">
+    <img src="https://ih1.redbubble.net/image.441411732.2244/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg" alt="Imagen 1">
+    <img src="https://i1.sndcdn.com/artworks-000248910181-j70ur0-t500x500.jpg" alt="Imagen 2">
+    <img src="https://i1.sndcdn.com/avatars-000606326067-m0gft4-t1080x1080.jpg" alt="Imagen 3">
+  </div>
+
+  <audio id="audio" autoplay loop>
+    <source src="⛧.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    // Audio autoplay con fallback al clic
+    const audio = document.getElementById('audio');
+    window.addEventListener('load', () => {
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          document.body.addEventListener('click', () => {
+            audio.play();
+          }, { once: true });
+        });
+      }
+    });
+
+    // Animación dinámica del título en pestaña
+    const baseTitle = "⛧ Templo Satánico ⛧";
+    let i = 0;
+    setInterval(() => {
+      const flicker = baseTitle.slice(0, i) + "⛧" + baseTitle.slice(i);
+      document.title = flicker;
+      i = (i + 1) % baseTitle.length;
+    }, 250);
+  </script>
+
+  <footer>
+    © 2025 Templo Satánico. Todos los derechos reservados al abismo.
+  </footer>
+
+</body>
+</html>
