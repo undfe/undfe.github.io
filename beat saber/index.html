@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería de Videos – Heatseeker EU</title>
+  <link rel="icon" type="image/x-icon" href="https://undfe.github.io/resources/stolaspfpbyundefinedname.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+      position: relative;
+      min-height: 100vh;
+      background: url('angel-and-demon-wallpaper-2880x1620_52.jpg') no-repeat center center / cover;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1300px;
+    }
+
+    .video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .video-container {
+      flex: 0 0 380px;
+      max-width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+      background-color: #111111e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .video-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .led-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(270deg, #ff004c, #00ffd5, #ffe600, #6a00ff, #ff004c);
+      background-size: 1000% 1000%;
+      animation: rainbow 10s linear infinite;
+      z-index: 2;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .title {
+      font-size: 1.4rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.8rem 1rem 0.5rem;
+      color: #ffffff;
+      animation: fadeInTitle 1s ease-in-out;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #ffaaaa;
+      text-align: center;
+      margin: 0.5rem 1rem 0;
+      font-style: italic;
+    }
+
+    @keyframes fadeInTitle {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #ffd700;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+      animation: fadeInFooter 2s ease;
+    }
+
+    .tier-title {
+      margin-top: 2.5rem;
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .footer img {
+      margin-top: 1rem;
+      max-width: 320px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .footer img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 1.1rem;
+      }
+
+      .note {
+        font-size: 0.8rem;
+      }
+
+      .footer {
+        font-size: 1.1rem;
+      }
+
+      .tier-title {
+        font-size: 1rem;
+      }
+
+      .video-grid {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+      }
+
+      .video-container {
+        flex: 0 0 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+
+    <div class="video-grid">
+      <div class="video-container">
+        <div class="led-strip"></div>
+        <h2 class="title">Jugando multiplayer Beat Saber un rato</h2>
+        <p class="note">Los clips no tienen sonido de juego o de Discord, solo de mi voz. Lo siento, el sonido del sistema estaba activado para que detectara todo el sonido del sistema, pero no lo detectaba.</p>
+        <video src="https://g34-g4g4gg-34g34k67jkg787hgrtevrtgjuh.netlify.app/2477299628-1110507054-a3383038-7295-4187-8c94-d327bf9427dc.mp4" controls></video>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const titleText = "@CDN";
+    let index = 0;
+    let isDeleting = false;
+
+    function animateTitle() {
+      if (!isDeleting && index < titleText.length) {
+        document.title = titleText.slice(0, index + 1);
+        index++;
+        setTimeout(animateTitle, 200);
+      } else if (!isDeleting && index === titleText.length) {
+        setTimeout(() => {
+          isDeleting = true;
+          animateTitle();
+        }, 1000);
+      } else if (isDeleting && index > 1) {
+        document.title = titleText.slice(0, index);
+        index--;
+        setTimeout(animateTitle, 200);
+      } else if (isDeleting && index === 1) {
+        document.title = "@";
+        setTimeout(() => {
+          isDeleting = false;
+          setTimeout(animateTitle, 200);
+        }, 2000);
+      }
+    }
+
+    animateTitle();
+  </script>
+</body>
+</html>
